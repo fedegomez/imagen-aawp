@@ -3,7 +3,7 @@
 Plugin Name: Imagen destacada con AAWP
 Plugin URI: 
 Description: Establece como destacada la primera imagen que muestre el shortcode del plugin AAWP.
-Version: 
+Version: 1.0.1
 Author: Fede Gómez
 Author URI: https://www.fedegomez.es
 License: 
@@ -61,7 +61,11 @@ add_filter('wp_get_attachment_image_src', 'change_image_mejorcluster', 10, 4);
 
 function is_mejorcluster_active()
 {
-    if (is_plugin_active('mejorcluster/mejorcluster.php')) {
+    /*if (is_plugin_active('mejorcluster/mejorcluster.php')) {
+        return true;
+    }*/
+
+    if (in_array('mejorcluster/mejorcluster.php', apply_filters('active_plugins', get_option('active_plugins')))) {
         return true;
     }
 
