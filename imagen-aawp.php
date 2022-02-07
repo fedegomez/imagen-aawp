@@ -9,8 +9,9 @@ Author URI: https://www.fedegomez.es
 License: 
 License URI: 
 */
-
-include('simplehtmldom/simple_html_dom.php');
+if (!function_exists('str_get_html') {
+    require_once('simplehtmldom/simple_html_dom.php');
+}
 
 add_filter('post_thumbnail_html', 'custom_thumbnail_tag_filter', 10, 2);
 function custom_thumbnail_tag_filter($html, $post_id)
