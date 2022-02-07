@@ -9,7 +9,7 @@ Author URI: https://www.fedegomez.es
 License: 
 License URI: 
 */
-if (!function_exists('str_get_html') {
+if (!function_exists('str_get_html')) {
     require_once('simplehtmldom/simple_html_dom.php');
 }
 
